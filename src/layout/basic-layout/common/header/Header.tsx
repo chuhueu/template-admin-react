@@ -1,9 +1,10 @@
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { IconButton, Toolbar, Typography } from "@mui/material";
+import { IconButton, Toolbar, Typography, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HeaderProps } from "lib/interfaces";
+import Languages from "./languages/Languages";
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -30,7 +31,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const index: React.FC<HeaderProps> = ({
+const Header: React.FC<HeaderProps> = ({
   open,
   handleToggleDrawer,
   drawerwidth,
@@ -50,9 +51,11 @@ const index: React.FC<HeaderProps> = ({
         <Typography variant="h6" noWrap component="div">
           Persistent drawer
         </Typography>
+        {/* Languages */}
+        <Languages/>
       </Toolbar>
     </AppBar>
   );
 };
 
-export default index;
+export default Header;

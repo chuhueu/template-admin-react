@@ -12,9 +12,15 @@ import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { SvgIconComponent } from "@mui/icons-material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { DrawerProps } from "lib/interfaces";
+
+interface SelectedListItem {
+  name: string;
+  icon: SvgIconComponent
+}
 
 /**
  * This is drawer header component
@@ -32,7 +38,8 @@ export const DrawerHeader = styled("div")(({ theme }) => ({
 /**
  * This is tab left component of your web
  */
-const index: React.FC<DrawerProps> = ({
+const mainListItems: SelectedListItem[] = [];
+const DrawerComponent: React.FC<DrawerProps> = ({
   open,
   handleToggleDrawer,
   drawerwidth,
@@ -91,4 +98,4 @@ const index: React.FC<DrawerProps> = ({
   );
 };
 
-export default index;
+export default DrawerComponent;

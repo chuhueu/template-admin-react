@@ -1,11 +1,11 @@
-import { DashBoard } from "layout";
+import { Layout } from "layout";
 import { paths } from "lib/constants";
 import { lazy } from "react";
 
 const routes = [
   {
     route: "*",
-    component: DashBoard,
+    component: Layout,
     routes: [
       {
         path: paths.Landing,

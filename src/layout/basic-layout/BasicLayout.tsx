@@ -1,8 +1,8 @@
 import { Box, LinearProgress } from "@mui/material";
-import { Drawer, Header } from "components";
+import { Drawer, Header } from "./common";
 import React, { Suspense } from "react";
 import { styled } from "@mui/material/styles";
-import { DrawerHeader } from "components/DashBoard/Drawer";
+import { DrawerHeader } from "./common/Drawer";
 import { renderRoutes } from "react-router-config";
 import { DashBoardProps } from "lib/interfaces";
 
@@ -34,7 +34,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
  * + drawer left
  * + main content page
  */
-const DashBoard: React.FC<DashBoardProps> = ({ route }) => {
+const BasicLayout: React.FC<DashBoardProps> = ({ route }) => {
   const [open, setOpen] = React.useState(true);
 
   const handleToggleDrawer = () => {
@@ -63,4 +63,4 @@ const DashBoard: React.FC<DashBoardProps> = ({ route }) => {
   );
 };
 
-export default DashBoard;
+export default BasicLayout;

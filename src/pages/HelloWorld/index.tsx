@@ -1,6 +1,4 @@
-import { Button } from "@mui/material";
-import { Page } from "components";
-import React from "react";
+import { Button, Paper } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "store";
@@ -15,7 +13,7 @@ const index = () => {
   };
 
   return (
-    <Page title="hello">
+    <Paper>
       <div className="App">
         <header className="App-header">
           <p>
@@ -62,7 +60,7 @@ const index = () => {
           </div>
         </div>
       </div>
-    </Page>
+    </Paper>
   );
 };
 
