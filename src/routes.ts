@@ -10,7 +10,7 @@ const routes = [
       {
         path: paths.Landing,
         exact: true,
-        component: lazy(() => import("pages/HelloWorld")),
+        component: lazy(() => import("pages/home/Home")),
       },
     ],
   },

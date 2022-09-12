@@ -1,8 +1,8 @@
 import { Box, LinearProgress } from "@mui/material";
-import { Drawer, Header } from "./common";
+import { Drawer, Header } from "components";
 import React, { Suspense } from "react";
 import { styled } from "@mui/material/styles";
-import { DrawerHeader } from "./common/Drawer";
+import { DrawerHeader } from "../../components/drawer/Drawer";
 import { renderRoutes } from "react-router-config";
 import { DashBoardProps } from "lib/interfaces";
 
