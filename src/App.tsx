@@ -21,8 +21,8 @@ function App() {
   useEffect(() => {
     const currentBrowserTheme =
       window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
-        ? "dark"
-        : "light";
+        ? "light"
+        : "dark";
     dispatch(
       Actions.Web.update({
         key: "mode",
@@ -37,7 +37,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <SnackbarProvider maxSnack={3}>
+      <SnackbarProvider
+        maxSnack={3}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right"
+        }}>
         <Router history={history}>{renderRoutes(routes)}</Router>
       </SnackbarProvider>
     </ThemeProvider>
