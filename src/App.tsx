@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "./store";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
@@ -8,12 +8,30 @@ import { SnackbarProvider } from "notistack";
 import { RootState } from "store/reducers";
 import cookie from "cookie";
 import routes from "routes";
-import { Router } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { SignIn } from "pages";
 
 const history = createBrowserHistory();
 
 function App() {
+  // If user don't login
+  const accessToken = sessionStorage.getItem('accessToken') ?? localStorage.getItem('accessToken') ?? '';
+
+  if (!accessToken) {
+    return (
+      <Router history={history}>
+        <Switch>
+          <Route path="/sign-in">
+            <SignIn />
+          </Route>
+          <Route path="/">
+            <Redirect to="/sign-in" />
+          </Route>
+        </Switch>
+      </Router>
+    )
+  }
   const mode = useSelector((state: RootState) => state.Web.mode);
   const dispatch = useDispatch();
 

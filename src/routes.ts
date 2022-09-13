@@ -1,10 +1,10 @@
-import { Layout } from "layout";
+import { Layout, EmptyLayout } from "layout";
 import { paths } from "lib/constants";
 import { lazy } from "react";
 
 const routes = [
   {
-    route: "*",
+    route: "",
     component: Layout,
     routes: [
       {
